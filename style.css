@@ -24,6 +24,19 @@ body {
     overflow-x: hidden;
 }
 
+/* ANIMATIONS */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* NAV */
 nav {
     display: flex;
     justify-content: space-between;
@@ -37,11 +50,19 @@ nav {
 }
 
 .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
     font-size: 1.2rem;
     font-weight: 700;
     color: var(--gold);
     text-decoration: none;
     letter-spacing: -0.5px;
+}
+
+.nav-logo svg {
+    width: 28px;
+    height: 28px;
 }
 
 .nav-links {
@@ -61,6 +82,7 @@ nav {
     color: var(--gold);
 }
 
+/* HERO */
 .hero {
     text-align: center;
     padding: 120px 20px 80px;
@@ -103,10 +125,36 @@ nav {
     background: var(--gold-dim);
 }
 
+/* STATS */
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    padding: 40px 20px;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--gold);
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-top: 4px;
+}
+
+/* PHILOSOPHY */
 .philosophy {
     text-align: center;
     padding: 60px 20px;
-    border-top: 1px solid var(--border);
 }
 
 .philosophy p {
@@ -117,6 +165,85 @@ nav {
     margin: 0 auto;
 }
 
+/* HOW IT WORKS */
+.how-it-works {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 80px 20px;
+    border-top: 1px solid var(--border);
+}
+
+.how-it-works h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: #FFFFFF;
+    margin-bottom: 50px;
+}
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.step {
+    text-align: center;
+    padding: 30px;
+}
+
+.step-number {
+    width: 50px;
+    height: 50px;
+    background: var(--gold);
+    color: #000;
+    font-size: 1.5rem;
+    font-weight: 700;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+.step h3 {
+    color: #FFFFFF;
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.step p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* ABOUT */
+.about {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 80px 20px;
+    border-top: 1px solid var(--border);
+}
+
+.about h2 {
+    font-size: 2rem;
+    color: #FFFFFF;
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.about p {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 16px;
+}
+
+.about p strong {
+    color: var(--gold);
+}
+
+/* FEATURES */
 .features {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -124,6 +251,7 @@ nav {
     max-width: 1000px;
     margin: 0 auto;
     padding: 60px 20px;
+    border-top: 1px solid var(--border);
 }
 
 .feature-card {
@@ -145,6 +273,7 @@ nav {
     line-height: 1.7;
 }
 
+/* EBOOKS */
 .ebooks {
     max-width: 1000px;
     margin: 0 auto;
@@ -202,6 +331,112 @@ nav {
     color: #000;
 }
 
+.ebook-card .coming-soon {
+    display: inline-block;
+    padding: 10px 24px;
+    border: 1px solid var(--text-muted);
+    color: var(--text-muted);
+    font-weight: 600;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    cursor: default;
+}
+
+/* TWITTER EMBED */
+.twitter-section {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 80px 20px;
+    border-top: 1px solid var(--border);
+}
+
+.twitter-section h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: #FFFFFF;
+    margin-bottom: 30px;
+}
+
+/* TESTIMONIALS */
+.testimonials {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 80px 20px;
+    border-top: 1px solid var(--border);
+    text-align: center;
+}
+
+.testimonials h2 {
+    font-size: 2rem;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+}
+
+.testimonials p {
+    color: var(--text-muted);
+    font-size: 1rem;
+}
+
+/* EMAIL SIGNUP */
+.email-signup {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 80px 20px;
+    border-top: 1px solid var(--border);
+    text-align: center;
+}
+
+.email-signup h2 {
+    font-size: 2rem;
+    color: #FFFFFF;
+    margin-bottom: 16px;
+}
+
+.email-signup p {
+    color: var(--text-muted);
+    margin-bottom: 30px;
+    font-size: 1rem;
+}
+
+.email-form {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.email-form input {
+    padding: 14px 20px;
+    font-size: 1rem;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    background: var(--bg-card);
+    color: var(--text);
+    width: 280px;
+}
+
+.email-form input:focus {
+    outline: none;
+    border-color: var(--gold);
+}
+
+.email-form button {
+    padding: 14px 30px;
+    font-size: 1rem;
+    font-weight: 700;
+    background: var(--gold);
+    color: #000;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.email-form button:hover {
+    background: var(--gold-dim);
+}
+
+/* CTA */
 .cta {
     text-align: center;
     padding: 80px 20px;
@@ -235,6 +470,7 @@ nav {
     background: var(--gold-dim);
 }
 
+/* FOOTER */
 footer {
     text-align: center;
     padding: 40px 20px;
@@ -248,17 +484,40 @@ footer a {
     text-decoration: none;
 }
 
-@media (max-width: 600px) {
+/* MOBILE */
+@media (max-width: 768px) {
     .hero h1 {
         font-size: 2rem;
     }
+    
     nav {
         padding: 16px 20px;
     }
+    
     .nav-links {
         gap: 16px;
     }
+    
     .nav-links a {
         font-size: 0.8rem;
+    }
+    
+    .stats {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .steps {
+        grid-template-columns: 1fr;
+    }
+    
+    .email-form {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .email-form input {
+        width: 100%;
+        max-width: 300px;
     }
 }
